@@ -1,3 +1,6 @@
+const modal = document.getElementById('modal');
+const fechar = document.getElementById('fechar');
+
 function login() {
   var nome = $("#nome").val();
   var senha = $("#senha").val();
@@ -13,6 +16,10 @@ function login() {
 
     window.location.href = "../Loja/loja.html";
   } else {
-    //logica para se o nome e senha forem incorretos
+    modal.style.display = 'block';
   }
+
+  fechar.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
 }
