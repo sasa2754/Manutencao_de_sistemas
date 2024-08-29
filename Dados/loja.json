@@ -1,20 +1,42 @@
 [
   {
     "id": 1,
-    "descricao": "Produto 1",
-    "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm3cExnsB3qat_a-YqS4zThCXsiR4TWk2f4_-Do7MXhw&s",
-    "preco": 10.0
+    "nome": "A Corte de Espinhos e Rosas",
+    "imagem": "../imagens/acotar1.jpg",
+    "preco": 35.0,
+    "status": false,
+    "quantidade": 32
   },
   {
     "id": 2,
-    "descricao": "Produto 2",
-    "imagem": "https://storage.alboom.ninja/sites/7474/albuns/343827/fotografia-de-produtos-campinas-fotografo-publicidade-aloha-life-11.jpg?t=1541510096",
-    "preco": 20.0
+    "nome": "A Corte de Névoa e Fúria",
+    "imagem": "../imagens/acotar2.jpg",
+    "preco": 45.0,
+    "status": false,
+    "quantidade": 23
   },
   {
     "id": 3,
-    "descricao": "Produto 3",
-    "imagem": "https://skinquer.com.br/cdn/shop/articles/blogordem.jpg?v=1687270129",
-    "preco": 30.0
+    "nome": "A Corte de Asas e Ruína",
+    "imagem": "../imagens/acotar3.jpg",
+    "preco": 50.0,
+    "status": false,
+    "quantidade": 87
+  },
+  {
+    "id": 4,
+    "nome": "A Corte de Gelo e Estrelas",
+    "imagem": "../imagens/acotar4.jpg",
+    "preco": 25.0,
+    "status": false,
+    "quantidade": 35
+  },
+  {
+    "id": 5,
+    "nome": "A Corte de Chamas Prateadas",
+    "imagem": "../imagens/acotar5.jpg",
+    "preco": 59.0,
+    "status": false,
+    "quantidade": 15
   }
 ]
