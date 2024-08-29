@@ -1,5 +1,7 @@
 const modal = document.getElementById('modal');
 const fechar = document.getElementById('fechar');
+const chave = document.getElementById('chave');
+const senha = document.getElementById('senha');
 
 function login() {
   var nome = $("#nome").val();
@@ -23,3 +25,12 @@ function login() {
     modal.style.display = 'none';
   });
 }
+
+chave.addEventListener('click', () => {
+  if (senha.type == 'password') {
+    senha.type = 'text';
+  }
+  else {
+    senha.type = "password";
+  }
+});

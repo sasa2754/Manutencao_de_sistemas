@@ -63,14 +63,15 @@ body {
   gap: 2vh;
   width: 80%;
   height: auto;
-  margin-bottom: 4vh;
+  margin-bottom: 4vh; 
 }
 
 .key {
-  position: absolute;
-  top: 2px;
-  right: 10px;
+  position: relative;
+  top: 5px;
+  right: 30px;
   opacity: 0.6;
+  width: 20px;
 }
 .key:hover {
   cursor: pointer;
@@ -80,4 +81,8 @@ body {
 input {
   padding: 5px;
   border: 2px solid #909090;
+}
+
+input#senha {
+  margin-left: 1.5rem;
 }
