@@ -4,7 +4,7 @@
     "nome": "A Corte de Espinhos e Rosas",
     "imagem": "../imagens/acotar1.jpg",
     "preco": 35.0,
-    "status": false,
+    "status": true,
     "quantidade": 32
   },
   {
