@@ -1,0 +1,70 @@
+h4 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+h5 {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.idPerfil {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+  .centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardzinho {
+  background-color: rgb(217, 151, 255);
+  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.342), inset 0px 0px 15px 15px rgba(202, 117, 252, 0.877);
+  border-radius: 10px;
+  text-align: center;
+  max-width: 18%;
+  font-size: 20px;
+  padding: 8px;
+  margin: 10px;
+  height: 450px;
+  max-height: 80%;
+  width: 350px;
+}
+
+.livro {
+  max-width: 800px;
+  width: 60%;
+  height: 280px;
+}
+
+.botaoCarrinho {
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  width: 200px;
+  background-color: blueviolet;
+  color: white;
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.356), inset 0px 0px 8px 5px rgb(164, 80, 243);
+  cursor: pointer;
+}
+
+.botaoCarrinho:hover {
+  background-color: rgb(107, 32, 177);
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.356), inset 0px 0px 8px 5px rgb(142, 53, 224);
+}
+
+#perfil {
+  font-size: 25px;
+}
+
+#idPerfil {
+
+}

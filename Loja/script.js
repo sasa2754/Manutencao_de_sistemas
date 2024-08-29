@@ -6,7 +6,7 @@ window.onload = function () {
   var user = JSON.parse(storedUser);
   document.getElementById("user").textContent = user.name;
   document.getElementById("perfil").textContent = user.name;
-  document.getElementById("idPerfil").textContent = user.id;
+  document.getElementById("idPerfil").textContent = `Protocolo atual: ${user.id}`;
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,50 +14,50 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       produtos = data;
-      const produtosContainer =
-        document.getElementById("produtos-container");
+      const cards =
+          document.getElementById("cards");
+  
+        produtos.map((produto, index) => {
+            const cardzinho = document.createElement('div');
+            cardzinho.className = 'cardzinho';
 
-      produtos.map((produto, index) => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.style.width = "18rem";
-        card.style.marginRight = "10px";
+            const bolinha = document.createElement('div');
+            bolinha.className = 'bolinha';
+            if (produto.status == false) {
+                bolinha.className = 'bolinha verde';
+            }
+            else {
+                bolinha.className = 'bolinha';
+            }
 
-        const imagem = document.createElement("img");
-        imagem.src = produto.imagem;
-        imagem.className = "card-img-top";
+            const nome = document.createElement('h3');
+            nome.textContent = `${produto.nome}`;
 
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+            const livro = document.createElement('img');
+            livro.src = produto.imagem;
+            livro.className = 'livro';
 
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.textContent = produto.descricao;
+            const preco = document.createElement('h4');
+            preco.textContent = `Preço: R$${produto.preco.toFixed(2)}`
 
-        const cardText = document.createElement("p");
-        cardText.className = "card-text";
-        cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
+            const btnAdicionarAoCarrinho = document.createElement("button");
+            btnAdicionarAoCarrinho.href = "#";
+            btnAdicionarAoCarrinho.className = "botaoCarrinho";
+            btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
+            btnAdicionarAoCarrinho.setAttribute("data-indice", index);
+            
+            cardzinho.appendChild(bolinha);
+            cardzinho.appendChild(nome);
+            cardzinho.appendChild(livro);
+            cardzinho.appendChild(preco);
+            cardzinho.appendChild(btnAdicionarAoCarrinho);
 
-        const btnAdicionarAoCarrinho = document.createElement("a");
-        btnAdicionarAoCarrinho.href = "#";
-        btnAdicionarAoCarrinho.className =
-          "btn btn-primary btn-adicionar-ao-carrinho";
-        btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
-        btnAdicionarAoCarrinho.setAttribute("data-indice", index);
-
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
-        cardBody.appendChild(btnAdicionarAoCarrinho);
-
-        card.appendChild(imagem);
-        card.appendChild(cardBody);
-
-        produtosContainer.appendChild(card);
+            cards.appendChild(cardzinho);
       });
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  $("#produtos-container").on(
+  $("#cardzinho").on(
     "click",
     ".btn-adicionar-ao-carrinho",
     function () {
