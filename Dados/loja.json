@@ -38,5 +38,45 @@
     "preco": 59.0,
     "status": false,
     "quantidade": 15
+  },
+  {
+    "id": 6,
+    "nome": "É assim que acaba",
+    "imagem": "../imagens/assimQAcaba.jpg",
+    "preco": 25.0,
+    "status": false,
+    "quantidade": 15
+  },
+  {
+    "id": 7,
+    "nome": "É assim que começa",
+    "imagem": "../imagens/assimQComeca.jpg",
+    "preco": 59.0,
+    "status": false,
+    "quantidade": 15
+  },
+  {
+    "id": 8,
+    "nome": "Cidade de Papel",
+    "imagem": "../imagens//cidadePapel.jpg",
+    "preco": 39.0,
+    "status": false,
+    "quantidade": 15
+  },
+  {
+    "id": 9,
+    "nome": "Frieren",
+    "imagem": "../imagens/frieren.avif",
+    "preco": 40.0,
+    "status": false,
+    "quantidade": 15
+  },
+  {
+    "id": 10,
+    "nome": "Os irmãos karamazov",
+    "imagem": "../imagens/irmaoskaramazov.jpg",
+    "preco": 79.0,
+    "status": false,
+    "quantidade": 15
   }
 ]
