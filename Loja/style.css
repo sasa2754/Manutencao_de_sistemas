@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  .wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 5%;
+  }
+  .idPerfil {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+  @media (width <= 900px) {
+    .center {
+      justify-content: center;
+      gap: 2vh;
+    }
+  }
+
+/* Estilos para o card */
+.custom-card {
+    width: 18rem;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  /* Estilos para a imagem do card */
+  .custom-card-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos para o corpo do card */
+  .custom-card-body {
+    padding: 15px;
+  }
+  
+  /* Estilos para o título do card */
+  .custom-card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para o texto do card */
+  .custom-card-text {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Estilos para o botão de adicionar ao carrinho */
+  .custom-btn-add {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-btn-add:hover {
+    background-color: #0056b3;
+  }
+  

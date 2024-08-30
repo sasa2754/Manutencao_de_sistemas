@@ -1,3 +1,8 @@
+const modal = document.getElementById('modal');
+const fechar = document.getElementById('fechar');
+const chave = document.getElementById('chave');
+const senha = document.getElementById('senha');
+
 function login() {
   var nome = $("#nome").val();
   var senha = $("#senha").val();
@@ -13,6 +18,19 @@ function login() {
 
     window.location.href = "../Loja/loja.html";
   } else {
-    //logica para se o nome e senha forem incorretos
+    modal.style.display = 'block';
   }
+
+  fechar.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
 }
+
+chave.addEventListener('click', () => {
+  if (senha.type == 'password') {
+    senha.type = 'text';
+  }
+  else {
+    senha.type = "password";
+  }
+});

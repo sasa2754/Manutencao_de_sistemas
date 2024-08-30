@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +8,17 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   </head>
   <body>
+    <div class="modal" id="modal">
+      <h3>Login ou senha inválidos</h3>
+      <img src="../imagens/gatoTriste.webp" alt="gatoTriste" class="gato">
+      <button class="fechar" id="fechar">Fechar</button>
+    </div>
     <div class="container">
       <h1>Login</h1>
-        <input type="text" placeholder="Insira seu nome" id="nome" />
+        <input type="text" placeholder="Insira seu nome" id="nome"/>
         <div >
-          <input type="password" placeholder="Insira sua senha" id="senha" >
+          <input type="password" placeholder="Insira sua senha" id="senha">
+          <img src="../imagens/chave.png" alt="chaveFofa" class="key" id="chave">
         </div>
         <button onclick="login()">Entrar</button>
       </div>

@@ -10,6 +10,49 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(230, 230, 230);
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(42, 210, 216);
+  height: 300px;
+  width: 90%;
+  max-height: 500px;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(111, 250, 255);
+}
+
+.fechar {
+  max-width: 400px;
+  max-height: 50px;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: rgb(255, 92, 233);
+  border: none;
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(255, 147, 241);
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.fechar:hover {
+  background-color: rgb(233, 44, 208);
+  box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(209, 107, 196);
+}
+
+.gato {
+  border-radius: 10px;
+  margin-top: 1rem;
+  width: 60%;
 }
 
 .container {
@@ -20,14 +63,15 @@ body {
   gap: 2vh;
   width: 80%;
   height: auto;
-  margin-bottom: 4vh;
+  margin-bottom: 4vh; 
 }
 
 .key {
-  position: absolute;
-  top: 2px;
-  right: 10px;
+  position: relative;
+  top: 5px;
+  right: 30px;
   opacity: 0.6;
+  width: 20px;
 }
 .key:hover {
   cursor: pointer;
@@ -37,4 +81,8 @@ body {
 input {
   padding: 5px;
   border: 2px solid #909090;
+}
+
+input#senha {
+  margin-left: 1.5rem;
 }
