@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <a href="../Carrinho/carrinho.html">Ir para carrinho</a>
+    <a href="../Carrinho/carrinho.html" id="addCarrinho">Ir para carrinho</a>
     <div>
       <h5 id="perfil"></h5>
       <div class="idPerfil">
@@ -24,6 +24,15 @@
     <div class="wrap">
       <div id="produtos-container" class="row center"></div>
     </div>
+        <!-- Modal de Confirmação -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Deseja adicionar este produto ao carrinho?</p>
+            <button id="confirmAdd" class="custom-btn">Sim</button>
+            <button id="fechar" class="custom-btn">Não</button>
+          </div>
+        </div>
     <script src="script.js"></script>
   </body>
 </html>

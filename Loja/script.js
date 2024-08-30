@@ -1,3 +1,16 @@
+const modal = document.getElementById('modal');
+const fechar = document.getElementById('fechar');
+const abrirModal = document.getElementById('addCarrinho');
+
+abrirModal.addEventListener('click', () => {
+  modal.style.display = `block`;
+});
+
+fechar.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
+
+
 // Declaração da variável produtos fora do escopo do evento para torná-la global
 let produtos;
 
@@ -39,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAdicionarAoCarrinho.href = "#";
         btnAdicionarAoCarrinho.className = "custom-btn-add";
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
+        btnAdicionarAoCarrinho.addEventListener("click", () => {
+          modal.style.display = `block`
+        });
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
         cardBody.appendChild(cardTitle);
@@ -53,11 +69,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  $("#produtos-container").on("click", ".custom-btn-add", function () {
-    const indexDoProduto = $(this).data("indice");
-    const produtoSelecionado = produtos[indexDoProduto];
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    carrinho.push(produtoSelecionado);
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  });
+  $("#produtos-container").on("click", ".custom-btn-add", addCarrinho());
 });
+
+function addCarrinho() {
+  const indexDoProduto = $(this).data("indice");
+  const produtoSelecionado = produtos[indexDoProduto];
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.push(produtoSelecionado);
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
