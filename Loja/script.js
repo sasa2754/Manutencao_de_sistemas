@@ -14,34 +14,30 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((data) => {
       produtos = data;
-      const produtosContainer =
-        document.getElementById("produtos-container");
+      const produtosContainer = document.getElementById("produtos-container");
 
       produtos.map((produto, index) => {
         const card = document.createElement("div");
-        card.className = "card";
-        card.style.width = "18rem";
-        card.style.marginRight = "10px";
+        card.className = "custom-card";
 
         const imagem = document.createElement("img");
         imagem.src = produto.imagem;
-        imagem.className = "card-img-top";
+        imagem.className = "custom-card-img";
 
         const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "custom-card-body";
 
         const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
+        cardTitle.className = "custom-card-title";
         cardTitle.textContent = produto.descricao;
 
         const cardText = document.createElement("p");
-        cardText.className = "card-text";
+        cardText.className = "custom-card-text";
         cardText.textContent = "Preço: $" + produto.preco.toFixed(2);
 
         const btnAdicionarAoCarrinho = document.createElement("a");
         btnAdicionarAoCarrinho.href = "#";
-        btnAdicionarAoCarrinho.className =
-          "btn btn-primary btn-adicionar-ao-carrinho";
+        btnAdicionarAoCarrinho.className = "custom-btn-add";
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
         btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
@@ -57,15 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  $("#produtos-container").on(
-    "click",
-    ".btn-adicionar-ao-carrinho",
-    function () {
-      const indexDoProduto = $(this).data("indice");
-      const produtoSelecionado = produtos[indexDoProduto];
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      carrinho.push(produtoSelecionado);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    }
-  );
+  $("#produtos-container").on("click", ".custom-btn-add", function () {
+    const indexDoProduto = $(this).data("indice");
+    const produtoSelecionado = produtos[indexDoProduto];
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    carrinho.push(produtoSelecionado);
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  });
 });
