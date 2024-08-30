@@ -1,88 +1,181 @@
-* {
-    padding: 0;
-    margin: 0;
-  }
-  body {
+
+body {
     width: 100vw;
     height: auto;
     overflow-x: hidden;
-    padding: 20px;
-  }
-  .wrap {
-    display: flex;
-    flex-direction: row;
+    padding: 50px;
+}
+
+.wrap {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: auto;
+flex-wrap: wrap;
+padding: 5%;
+}
+.idPerfil {
+display: flex;
+flex-direction: row;
+gap: 5px;
+}
+@media (width <= 900px) {
+.center {
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    flex-wrap: wrap;
-    padding: 5%;
-  }
-  .idPerfil {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-  }
-  @media (width <= 900px) {
-    .center {
-      justify-content: center;
-      gap: 2vh;
-    }
-  }
+    gap: 2vh;
+}
+}
 
 /* Estilos para o card */
 .custom-card {
-    width: 18rem;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 20px;
-    background-color: #fff;
-  }
-  
-  /* Estilos para a imagem do card */
-  .custom-card-img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Estilos para o corpo do card */
-  .custom-card-body {
-    padding: 15px;
-  }
-  
-  /* Estilos para o título do card */
-  .custom-card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Estilos para o texto do card */
-  .custom-card-text {
-    margin-bottom: 15px;
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /* Estilos para o botão de adicionar ao carrinho */
-  .custom-btn-add {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
+width: 18rem;
+margin-right: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+display: inline-block;
+vertical-align: top;
+margin-bottom: 20px;
+background-color: #fff;
+}
+
+/* Estilos para a imagem do card */
+.custom-card-img {
+width: 100%;
+height: auto;
+}
+
+/* Estilos para o corpo do card */
+.custom-card-body {
+padding: 15px;
+}
+
+/* Estilos para o título do card */
+.custom-card-title {
+font-size: 1.25rem;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+/* Estilos para o texto do card */
+.custom-card-text {
+margin-bottom: 15px;
+font-size: 1rem;
+color: #555;
+}
+
+/* Estilos para o botão de adicionar ao carrinho */
+.custom-btn-add {
+display: inline-block;
+padding: 10px 15px;
+background-color: #007bff;
+color: #fff;
+text-align: center;
+text-decoration: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.custom-btn-add:hover {
+background-color: #0056b3;
+}
+
+/* Estilos para o modal */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed; /* Fixo no meio da tela */
+  z-index: 1; /* Fica acima do conteúdo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% do topo, centralizado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px; /* Largura do modal */
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Botão de fechar o modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Botões de confirmação */
+.custom-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(42, 210, 216);
+    height: 300px;
+    width: 90%;
+    max-height: 500px;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
     text-align: center;
-    text-decoration: none;
-    border-radius: 4px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(111, 250, 255);
+  }
+  
+  .fechar {
+    max-width: 400px;
+    max-height: 50px;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: rgb(255, 92, 233);
+    border: none;
+    box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(255, 147, 241);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.1s ease-in-out;
   }
   
-  .custom-btn-add:hover {
-    background-color: #0056b3;
+  .fechar:hover {
+    background-color: rgb(233, 44, 208);
+    box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.281), inset 0px 0px 15px 10px rgb(209, 107, 196);
   }
   
+  .gato {
+    border-radius: 10px;
+    margin-top: 1rem;
+    width: 60%;
+  }
