@@ -1,12 +1,23 @@
 const modal = document.getElementById('modal');
 const fechar = document.getElementById('fechar');
+const fechar2 = document.getElementById('fechar2');
 const abrirModal = document.getElementById('addCarrinho');
+const confirmarModal = document.getElementById("confirmAdd")
 
 abrirModal.addEventListener('click', () => {
   modal.style.display = `block`;
 });
 
 fechar.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
+
+fechar2.addEventListener('click', () => {
+  modal.style.display = 'none';
+})
+
+confirmarModal.addEventListener("click", () => {
+  addCarrinho(Number(modal.getAttribute("data-index")));
   modal.style.display = 'none';
 })
 
@@ -29,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       produtos = data;
       const produtosContainer = document.getElementById("produtos-container");
 
-      produtos.map((produto, index) => {
+      produtos.forEach((produto, index) => {
         const card = document.createElement("div");
         card.className = "custom-card";
 
@@ -52,10 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAdicionarAoCarrinho.href = "#";
         btnAdicionarAoCarrinho.className = "custom-btn-add";
         btnAdicionarAoCarrinho.textContent = "Adicionar ao Carrinho";
-        btnAdicionarAoCarrinho.addEventListener("click", () => {
-          modal.style.display = `block`
+        btnAdicionarAoCarrinho.setAttribute("data", index);
+
+        btnAdicionarAoCarrinho.addEventListener("click", (element) => {
+          modal.style.display = 'block';
+
+          modal.setAttribute("data-index", element.target.getAttribute("data"));
         });
-        btnAdicionarAoCarrinho.setAttribute("data-indice", index);
 
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
@@ -69,12 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.error("Erro ao carregar o arquivo JSON", error));
 
-  $("#produtos-container").on("click", ".custom-btn-add", addCarrinho());
 });
 
-function addCarrinho() {
-  const indexDoProduto = $(this).data("indice");
-  const produtoSelecionado = produtos[indexDoProduto];
+function addCarrinho(index) {
+  const produtoSelecionado = produtos[index];
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   carrinho.push(produtoSelecionado);
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
