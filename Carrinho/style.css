@@ -1,0 +1,105 @@
+body {
+    background-color: rgb(255, 234, 237);
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.centralize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listaBox {
+    background-color: rgb(250, 207, 214);
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.botaoRemover {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.botaoRemover:hover {
+    background-color: rgba(255, 0, 0, 0.288);
+}
+
+.voltar {
+    text-decoration: none;
+    color: black;
+}
+
+.voltar:hover {
+    color: rgb(255, 70, 101);
+}
+
+.botaoPedido {
+    max-width: 440px;
+    width: 90%;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(255, 112, 136);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.418), inset 0px 0px 2px 2px rgba(252, 232, 235, 0.582);
+    cursor: pointer;
+    color: white;
+}
+
+.botaoPedido:hover {
+    background-color: rgb(228, 96, 118);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.418), inset 0px 0px 2px 2px rgba(252, 232, 235, 0.582);
+}
+
+.confirm-purchase-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0px 0px 1000px 1000px rgba(0, 0, 0, 0.384), 0px 0px 10px 10px rgba(0, 0, 0, 0.418), inset 0px 0px 10px 10px rgba(252, 232, 235, 0.582);
+}
+
+.confirm-purchase-modal > button {
+    max-width: 80px;
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 112, 136);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.418), inset 0px 0px 2px 2px rgba(252, 232, 235, 0.582);
+    cursor: pointer;
+    margin: 8px;
+}
+
+.confirm-purchase-modal > button:hover {
+    background-color: rgb(228, 96, 118);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.418), inset 0px 0px 2px 2px rgba(252, 232, 235, 0.582);
+}
+
+#pedido {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgb(228, 96, 118);
+    color: #ffff;
+    font-size: 1.4rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.418);
+  }

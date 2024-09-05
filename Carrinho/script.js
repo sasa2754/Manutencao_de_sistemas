@@ -1,6 +1,25 @@
+const modal = document.getElementById('modal');
+const abrirModal = document.getElementById('abrirModal');
+const cancelar = document.getElementById('cancelar');
+const confirmar = document.getElementById('confirmar');
+
+abrirModal.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+cancelar.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+confirmar.addEventListener('click', () => {
+  modal.style.display = 'none';
+  gerarDocumentoWord();
+});
+
+
 $(document).ready(function () {
   // Recupera o carrinho do localStorage
-  const carrinho = JSON.parse(localStorage.getItem("market")) || [];
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
   // Elemento onde a lista será exibida
   const listaElement = $("#lista");
@@ -20,11 +39,11 @@ $(document).ready(function () {
     $.each(carrinho, function (index, item) {
       // Cria um elemento de lista para cada item
       const listItem = $("<li>").text(
-        `${item.descricao} - Preço: $${item.preco.toFixed(2)}`
+        `${item.nome} - Preço: $${item.preco.toFixed(2)}`
       );
 
       // Cria um botão de remoção
-      const removeButton = $("<button>")
+      const removeButton = $("<button class='botaoRemover'>")
         .text("❌")
         .css("margin-left", "10px")
         .click(function () {
@@ -42,7 +61,7 @@ $(document).ready(function () {
     });
 
     // Exibe o total em preço no elemento totalElement
-    totalElement.text(`Total: $${totalPreco}`);
+    totalElement.text(`Total: $${totalPreco.toFixed(2)}`);
   }
 
   // Função para remover um item do carrinho
@@ -77,10 +96,10 @@ function gerarDocumentoWord() {
       <body>
         <h1>Pedido confirmado</h1>
         <h3>Agradecemos sua preferencia</h3>
-        ${lista}
+        ${listaHtml}
         <br>
         <br>
-        ${total}
+        ${totalHtml}
       </body>
     </html>
   `;
