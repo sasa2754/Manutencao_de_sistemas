@@ -16,11 +16,13 @@ height: auto;
 flex-wrap: wrap;
 padding: 5%;
 }
+
 .idPerfil {
 display: flex;
 flex-direction: row;
 gap: 5px;
 }
+
 @media (width <= 900px) {
 .center {
     justify-content: center;
